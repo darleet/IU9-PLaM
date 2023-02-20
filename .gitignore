@@ -12,6 +12,8 @@
 
 # Config Files
 *.idea/
+*.iml
+*.xml
 
 # Package Files #
 *.jar
