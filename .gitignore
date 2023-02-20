@@ -11,8 +11,7 @@
 .mtj.tmp/
 
 # Config Files
-.xml
-.iml
+*.idea/
 
 # Package Files #
 *.jar
