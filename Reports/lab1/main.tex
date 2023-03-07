@@ -1,0 +1,177 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+% Поля
+%----------------------
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=1cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm}
+%----------------------
+
+% Russian-specific packages
+%----------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, main=russian]{babel}
+%----------------------
+
+\usepackage{textcomp}
+
+% Красная строка
+%----------------------
+\usepackage{indentfirst}
+%----------------------
+
+% Graphics
+%----------------------
+\usepackage{graphicx}
+\graphicspath{ {./images} }
+\usepackage{wrapfig}
+%----------------------
+
+% Import minted
+%----------------------
+\usepackage{minted}
+%----------------------
+
+\linespread{1.3}
+\sloppy
+\clubpenalty=10000
+\widowpenalty=10000
+
+
+
+\begin{document}
+
+%--------------------------------------
+%			ТИТУЛЬНЫЙ ЛИСТ
+%--------------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\newpage
+
+
+%Шапка титульного листа
+%--------------------------------------
+\vspace*{-60pt}
+\hspace{-65pt}
+\begin{minipage}{0.3\textwidth}
+\hspace*{-20pt}\centering
+\includegraphics[width=\textwidth]{emblem}
+\end{minipage}
+\begin{minipage}{0.67\textwidth}\small \textbf{
+\vspace*{-0.7ex}
+\hspace*{-6pt}\centerline{Министерство науки и высшего образования Российской Федерации}
+\vspace*{-0.7ex}
+\centerline{Федеральное государственное бюджетное образовательное учреждение }
+\vspace*{-0.7ex}
+\centerline{высшего образования}
+\vspace*{-0.7ex}
+\centerline{<<Московский государственный технический университет}
+\vspace*{-0.7ex}
+\centerline{имени Н.Э. Баумана}
+\vspace*{-0.7ex}
+\centerline{(национальный исследовательский университет)>>}
+\vspace*{-0.7ex}
+\centerline{(МГТУ им. Н.Э. Баумана)}}
+\end{minipage}
+%--------------------------------------
+
+%Полосы
+%--------------------------------------
+\vspace{-25pt}
+\hspace{-35pt}\rule{\textwidth}{2.3pt}
+
+\vspace*{-20.3pt}
+\hspace{-35pt}\rule{\textwidth}{0.4pt}
+%--------------------------------------
+
+\vspace{1.5ex}
+\hspace{-35pt} \noindent \small ФАКУЛЬТЕТ\hspace{80pt} <<Информатика и системы управления>>
+
+\vspace*{-16pt}
+\hspace{47pt}\rule{0.83\textwidth}{0.4pt}
+
+\vspace{0.5ex}
+\hspace{-35pt} \noindent \small КАФЕДРА\hspace{50pt} <<Теоретическая информатика и компьютерные технологии>>
+
+\vspace*{-16pt}
+\hspace{30pt}\rule{0.866\textwidth}{0.4pt}
+  
+\vspace{11em}
+
+\begin{center}
+\Large {\bf Лабораторная работа № 1} \\ 
+\large {\bf по курсу <<Языки и методы программирования>>} \\
+\large <<Настройка среды разработки. Запуск простейшего кода программы>> 
+\end{center}\normalsize
+
+\vspace{8em}
+
+
+\begin{flushright}
+  {Студент группы ИУ9-22Б Павлов И. П. \hspace*{15pt}\\ 
+  \vspace{2ex}
+  Преподаватель Посевин Д. П.\hspace*{15pt}}
+\end{flushright}
+
+\bigskip
+
+\vfill
+ 
+
+\begin{center}
+\textsl{Москва 2023}
+\end{center}
+\end{titlepage}
+%--------------------------------------
+%		КОНЕЦ ТИТУЛЬНОГО ЛИСТА
+%--------------------------------------
+
+\newpage
+\section{Условие}
+В лабораторной работе необходимо выполнить ряд действий для подготовки удобной рабочей среды для написания кода на Java. Дан код класса Factorial, который нужно запустить через терминал и через среду разработки:
+\begin{minted}{java}
+import java.util.stream.IntStream;
+
+public class Factorial 
+{ 
+
+ public static void main(String [] args) 
+ { 
+  if (args.length == 0) 
+     { 
+      System.out.println("Usage: java Factorial x"); 
+     } 
+  else 
+     { 
+      int n = Integer.parseInt(args [0]);
+      var numbers = IntStream.range(1, n+1); 
+      int f = numbers.reduce(1, (r,x)-> r*x); 
+      System.out.println(f); 
+     } 
+ } 
+} 
+\end{minted}
+
+\section{Настройка в терминале}
+Была произведена установка Java SDK через терминал. Далее был взят готовый файл с классом факториала и запущен через терминал.
+\begin{figure}[h] 
+\center{\includegraphics[scale=0.4]{cmd.png}} 
+\caption{Вывод в терминале} 
+\label{fig:image} 
+\end{figure}
+
+\section{Настройка IntelliJ IDEA}
+Была произведена установка IntelliJ через официальный сайт разработчика. Был создан проект с классом факториала внутри.
+\begin{figure}[h] 
+\center{\includegraphics[scale=0.35]{intellij_cmd.png}} 
+\caption{Вывод в терминале IntelliJ} 
+\label{fig:image} 
+\end{figure}
+\begin{figure}[h] 
+\center{\includegraphics[scale=0.35]{intellij_run.png}} 
+\caption{Стандартный вывод IntelliJ} 
+\label{fig:image} 
+\end{figure}
+
+\end{document}
