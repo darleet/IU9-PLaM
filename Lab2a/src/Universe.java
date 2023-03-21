@@ -14,7 +14,7 @@ public class Universe {
     }
 
     public static String getVector() {
-        return "(" + x + ", " + y + ", " + z + ")";
+        return "(" + x / counter + ", " + y / counter + ", " + z / counter + ")";
     }
 
     public static int getCounter() {
