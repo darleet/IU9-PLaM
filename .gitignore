@@ -1,4 +1,8 @@
 # Ignore everything except source files
-*.*
+/Lab*
 !*.java
 
+# Ignore archives
+*.tar.gz
+*.tar
+*.zip
