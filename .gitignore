@@ -1,8 +1,13 @@
 # Ignore everything except source files
-/Lab*
-!*.java
+*/out
+*/.idea
+*/cmake-build-debug
+*/CMakeLists.txt
 
 # Ignore archives
 *.tar.gz
 *.tar
 *.zip
+
+# Ignore .iml files
+*.iml
