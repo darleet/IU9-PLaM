@@ -11,3 +11,6 @@
 
 # Ignore .iml files
 *.iml
+
+# Ignore .o files
+*.o
